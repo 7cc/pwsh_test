@@ -13,19 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.101
-    - name: update pwsh
+    - name: update pwsh and run set_get_clipbpard.ps1
       run: |
          dotnet tool update --global PowerShell
-         exit
-      shell: pwsh
-
-    - name: test get-clipboard
-      run: |
+         pwsh --version
          gcm pwsh
+         pwsh
          $PSVersionTable
          .\set_get_clipbpard.ps1
       shell: pwsh
