@@ -1,3 +1,5 @@
+$PSVersionTable
+
 1..200 | % {
   Set-Clipboard $_
   $i = Get-Clipboard
