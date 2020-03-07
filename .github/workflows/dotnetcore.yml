@@ -17,10 +17,5 @@ jobs:
       run: |
          $PSVersionTable.PSVersion.ToString()
          dotnet tool update --global PowerShell
-         pwsh --version
-         gcm pwsh
-
-         & ${HOME}\.dotnet\tools\pwsh.exe
-         $PSVersionTable.PSVersion.ToString()
-         .\set_get_clipbpard.ps1
+         & ${HOME}\.dotnet\tools\pwsh.exe -File .\set_get_clipbpard.ps1
       shell: pwsh
