@@ -25,6 +25,7 @@ jobs:
 
     - name: test get-clipboard
       run: |
+         gcm pwsh
          $PSVersionTable
          .\set_get_clipbpard.ps1
       shell: pwsh
