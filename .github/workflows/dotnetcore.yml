@@ -15,10 +15,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: update pwsh and run set_get_clipbpard.ps1
       run: |
+         $PSVersionTable.PSVersion.ToString()
          dotnet tool update --global PowerShell
          pwsh --version
          gcm pwsh
-         pwsh
-         $PSVersionTable
+
+         & ${HOME}\.dotnet\tools\pwsh.exe
+         $PSVersionTable.PSVersion.ToString()
          .\set_get_clipbpard.ps1
       shell: pwsh
