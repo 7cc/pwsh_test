@@ -1,6 +1,6 @@
 $PSVersionTable
 
-1..200 | % {
+1..2000 | % {
   Set-Clipboard $_
   $i = Get-Clipboard
   if ( $i -eq "" ) {
