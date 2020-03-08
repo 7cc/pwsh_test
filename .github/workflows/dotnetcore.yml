@@ -15,7 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: update pwsh and run set_get_clipbpard.ps1
       run: |
-         $PSVersionTable.PSVersion.ToString()
+         Start-Sleep 5
          dotnet tool update --global PowerShell
+         Invoke-Expression -Command "$((gcm powershell)[-1].Source) -ExecutionPolicy RemoteSigned -File .\set_get_clipbpard.ps1"
          & ${HOME}\.dotnet\tools\pwsh.exe -File .\set_get_clipbpard.ps1
       shell: pwsh
