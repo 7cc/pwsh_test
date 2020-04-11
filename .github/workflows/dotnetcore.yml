@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Convert-test.ps1
       run: |
-         .\Convert-test.ps1.ps1
+         pwsh.exe -File .\Convert-test.ps1.ps1
       shell: pwsh
