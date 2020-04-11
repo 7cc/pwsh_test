@@ -1,0 +1,19 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Convert-test.ps1
+      run: |
+         .\Convert-test.ps1.ps1
+      shell: pwsh
