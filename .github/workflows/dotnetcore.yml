@@ -16,5 +16,4 @@ jobs:
     - name: Convert-test.ps1
       run: |
          .\Convert-test.ps1
-         pwsh.exe -File .\Convert-test.ps1
       shell: pwsh
