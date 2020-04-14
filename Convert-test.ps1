@@ -1,14 +1,16 @@
 echo "Start Convert-test.ps1"
 $PSVersionTable
 
-$csv = @'
-"date"
-"2020-04-11T18:29:59+09:00"
-'@ | ConvertFrom-Csv
+$obj = [PSCustomObject]@{ date = "2020-04-11T18:29:59+09:00" }
+$obj.date # string
 
-$csv.date
+$json =  $obj | ConvertTo-Json | ConvertFrom-Json
+$json.date.DateTime # datetime
 
-$json = '{ "date": "2020-04-11T18:29:59+09:00" }' | ConvertFrom-JSON
-$json.date.DateTime
+$csv = $j | ConvertTo-Csv | ConvertFrom-Csv
+$csv.date # string
+
+$json = $c | ConvertTo-Json | ConvertFrom-Json
+$json.date # string
 
 echo "End Convert-test.ps1"
